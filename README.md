@@ -1,5 +1,9 @@
 # 📚 Guidelines for referencing static resources in a project
 
+[English](.) | [简体中文](./README_zh.md)
+
+---
+
 This document records the core dependency libraries used in the project to implement the **flipbook effect**.
 
 ## 🛠 Core Dependencies (CDN)
@@ -27,38 +31,45 @@ To ensure loading speed and stability, it is recommended to use the `<html>` tag
 ## 🚀 Quick Integration Example
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<title>Page-turning eBook Demonstration</title>
-<style>
-#flipbook { width: 800px; height: 500px; }
-#flipbook .page { background: white; border: 1px solid #ccc; line-height: 500px; text-align: center; }
-</style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Page-turning eBook Demonstration</title>
+    <style>
+      #flipbook {
+        width: 800px;
+        height: 500px;
+      }
+      #flipbook .page {
+        background: white;
+        border: 1px solid #ccc;
+        line-height: 500px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="flipbook">
+      <div class="hard">Cover</div>
+      <div class="page">Page 1</div>
+      <div class="page">Page 2</div>
+      <div class="hard">back cover</div>
+    </div>
 
-<div id="flipbook">
-<div class="hard">Cover</div>
-<div class="page">Page 1</div>
-<div class="page">Page 2</div>
-<div class="hard">back cover</div>
-</div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/lizyChy0329/turn.js@4.1.0/turn.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/lizyChy0329/turn.js@4.1.0/turn.min.js"></script>
-
-<script>
-$(document).ready(function() {
-$("#flipbook").turn({
-width: 800,
-height: 500,
-autoCenter: true
-});
-});
-</script>
-</body>
+    <script>
+      $(document).ready(function () {
+        $('#flipbook').turn({
+          width: 800,
+          height: 500,
+          autoCenter: true,
+        });
+      });
+    </script>
+  </body>
 </html>
 ```
 
